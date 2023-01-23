@@ -48,6 +48,5 @@ this.contentList.addContent({
   imgSrc: "https://upload.wikimedia.org/wikipedia/en/0/0c/The_Witcher_3_cover_art.jpg",
   type: "RPG",
 });
-
 }
 }
