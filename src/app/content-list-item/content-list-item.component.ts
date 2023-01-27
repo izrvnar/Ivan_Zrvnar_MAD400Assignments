@@ -9,4 +9,9 @@ import { IContent } from '../models/icontent';
 export class ContentListItemComponent {
   @Input() content?: IContent;
 
+  displayIdAndDescription() {
+    console.log(`Id: ${this.content?.id} Description: ${this.content?.description}`);
+}
+
+
 }

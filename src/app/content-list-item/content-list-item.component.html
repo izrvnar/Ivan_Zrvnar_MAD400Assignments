@@ -1,3 +1,8 @@
-<p>{{content?.title}}</p>
+<h1>{{content?.title}}</h1>
+<h2>{{content?.author}}</h2>
+<h3>{{content?.type}}</h3>
 <p>{{content?.description}}</p>
-
+<img [src]="content!.imgSrc" (click)="displayIdAndDescription()">
+<ul>
+    <li *ngFor="let tag of content?.tags">{{ tag }}</li>
+  </ul>
