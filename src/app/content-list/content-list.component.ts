@@ -9,6 +9,9 @@ import { IContent } from '../models/icontent';
 export class ContentListComponent {
   contentList: IContent[];
   //define array of Icontent with 4 items
+  evenBackgroundClass = 'even-background';
+  oddBackgroundClass = 'odd-background'
+  
 
   constructor() {
     this.contentList = [];
@@ -52,6 +55,7 @@ export class ContentListComponent {
     type: "RPG",
     tags: ["open world", "action-adventure", "fantasy"]
   });
+
 
 
 

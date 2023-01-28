@@ -1,1 +1,1 @@
-<app-content-list-item *ngFor="let item of contentList" [content]="item"></app-content-list-item>
+<app-content-list-item *ngFor="let content of contentList; let i = index" [content]="content" [ngClass]="i % 2 === 0 ? evenBackgroundClass : oddBackgroundClass"></app-content-list-item>

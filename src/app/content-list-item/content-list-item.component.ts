@@ -12,6 +12,8 @@ export class ContentListItemComponent {
   displayIdAndDescription() {
     console.log(`Id: ${this.content?.id} Description: ${this.content?.description}`);
 }
+evenBackgroundClass = 'even-background';
+oddBackgroundClass = 'odd-background';
 
 
 }
