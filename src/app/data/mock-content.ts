@@ -1,4 +1,4 @@
-import { IContent } from "../app/models/icontent";
+import { IContent } from "../models/icontent";
 
 export const contentList: IContent[] = [
   {
