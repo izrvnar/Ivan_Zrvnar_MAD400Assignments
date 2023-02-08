@@ -7,6 +7,7 @@ import { ContentListItemComponent } from './content-list-item/content-list-item.
 import { VideoGamesService } from './services/video-games.service';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { AppRoutingModule } from './app--routing.module';
+import { SearchContentComponent } from './search-content/search-content.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AppRoutingModule } from './app--routing.module';
     ContentListComponent,
     ContentListItemComponent,
     ContentDetailComponent,
+    SearchContentComponent,
   ],
   imports: [
     BrowserModule,
