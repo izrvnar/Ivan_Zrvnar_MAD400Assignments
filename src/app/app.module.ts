@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { ContentListItemComponent } from './content-list-item/content-list-item.component';
 import { VideoGamesService } from './services/video-games.service';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { VideoGamesService } from './services/video-games.service';
     AppComponent,
     ContentListComponent,
     ContentListItemComponent,
+    ContentDetailComponent,
   ],
   imports: [
     BrowserModule
