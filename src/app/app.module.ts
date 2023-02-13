@@ -8,6 +8,7 @@ import { VideoGamesService } from './services/video-games.service';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { AppRoutingModule } from './app--routing.module';
 import { SearchContentComponent } from './search-content/search-content.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,10 +18,12 @@ import { SearchContentComponent } from './search-content/search-content.componen
     ContentListItemComponent,
     ContentDetailComponent,
     SearchContentComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     VideoGamesService

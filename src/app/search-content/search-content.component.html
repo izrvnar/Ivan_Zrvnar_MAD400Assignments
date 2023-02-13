@@ -1,1 +1,9 @@
-<p>search-content works!</p>
+<div>
+    <label for="content-id">Enter Content ID:</label>
+    <input type="number" id="content-id" [(ngModel)]="contentID">
+  </div>
+  <br><br>
+  <button (click)="getContent()">Search</button>
+
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
