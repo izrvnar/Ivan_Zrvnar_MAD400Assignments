@@ -9,6 +9,7 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
 import { AppRoutingModule } from './app--routing.module';
 import { SearchContentComponent } from './search-content/search-content.component';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     ContentListItemComponent,
     ContentDetailComponent,
     SearchContentComponent,
+    PageNotFoundComponent,
     
   ],
   imports: [
