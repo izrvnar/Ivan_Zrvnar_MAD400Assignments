@@ -1,7 +1,5 @@
-<h1>{{content?.title}}</h1>
-<h2>{{content?.author}}</h2>
+<a [routerLink]="['/content', content?.id]">{{content?.title}}</a>
 <h3>{{content?.type}}</h3>
-<p>{{content?.description}}</p>
 <img [src]="content!.imgSrc" (click)="displayIdAndDescription()">
 <ul>
     <li *ngFor="let tag of content?.tags">{{ tag }}</li>

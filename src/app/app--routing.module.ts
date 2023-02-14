@@ -7,9 +7,9 @@ import { SearchContentComponent } from './search-content/search-content.componen
 
 const routes: Routes = [
 
-  {path: "content", component: ContentListComponent}, 
-  {path: "content/id", component: ContentDetailComponent},
-  {path: "", redirectTo: "/content", pathMatch: "full"},
+  { path: 'content', component: ContentListComponent },
+  { path: 'content/:id', component: ContentDetailComponent },
+  { path: '', redirectTo: '/content', pathMatch: 'full' },
   {path: "search", component: SearchContentComponent},
 ]
 

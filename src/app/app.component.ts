@@ -8,10 +8,9 @@ import { VideoGamesService } from './services/video-games.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'I_Zrvnar_FavouriteVideoGames';
+  title = 'Ivan Zrvnars Favroutite Video Games';
   contentItem: IContent | undefined;
-  constructor(@Inject(VideoGamesService) private videoGameService: VideoGamesService) { 
-    this.videoGameService.getVideoGameById(2).subscribe(content => this.contentItem = content);
+  constructor() { 
   }
 }
 

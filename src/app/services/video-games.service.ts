@@ -21,6 +21,7 @@ export class VideoGamesService {
       throw new Error(`Video game with id ${id} not found`);
     }
     return of(videoGame);
+    console.log(videoGame);
   }
 
 
