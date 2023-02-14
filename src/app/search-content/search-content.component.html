@@ -5,5 +5,8 @@
   <br><br>
   <button (click)="getContent()">Search</button>
 
+  <app-content-list-item *ngIf="contentID" [content]="contentItem"></app-content-list-item>
+
+
   <div *ngIf="errorMessage">{{ errorMessage }}</div>
 
