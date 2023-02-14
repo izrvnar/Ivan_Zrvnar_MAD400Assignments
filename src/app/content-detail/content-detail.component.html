@@ -8,6 +8,7 @@
     <li *ngFor="let tag of contentItem?.tags">{{ tag }}</li>
   </ul>
 <a [routerLink]="['/']">Back to Content List</a>
+<a *ngIf="contentItem?.id !== 0" [routerLink]="['/content', contentItem!.id - 1]">Previous Content</a>
 </div>
 
 
