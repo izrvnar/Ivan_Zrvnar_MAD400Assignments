@@ -1,45 +1,39 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { contentList } from '../data/mock-content';
 import { IContent } from '../models/icontent';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoGamesService {
-  private videoGames: IContent[] = contentList;
 
-  constructor() { }
+  private serverUrl = 'api/content';
+
+  constructor(private http: HttpClient) { }
 
   getVideoGames(): Observable<IContent[]> {
-    return of(contentList);
+    return this.http.get<IContent[]>(this.serverUrl);
   }
 
   getVideoGameById(id: number): Observable<IContent> {
-    const videoGame = this.videoGames.find(content => content.id === id);
-    if (!videoGame) {
-      throw new Error(`Video game with id ${id} not found`);
-    }
-    return of(videoGame);
-    console.log(videoGame);
+    const url = `${this.serverUrl}/${id}`;
+    return this.http.get<IContent>(url);
   }
 
-
-  addVideoGame(videoGame: IContent): Observable<IContent[]> {
-    this.videoGames.push(videoGame);
-    return of(this.videoGames);
+  addVideoGame(videoGame: IContent): Observable<IContent> {
+    return this.http.post<IContent>(this.serverUrl, videoGame);
   }
 
-  updateVideoGame(videoGame: IContent): Observable<IContent[]> {
-    const index = this.videoGames.findIndex(content => content.id === videoGame.id);
-    this.videoGames[index] = videoGame;
-    return of(this.videoGames);
+  updateVideoGame(videoGame: IContent): Observable<void> {
+    const url = `${this.serverUrl}/${videoGame.id}`;
+    return this.http.put<void>(url, videoGame);
   }
 
-  removeVideoGame(id: number): Observable<IContent> {
-    const index = this.videoGames.findIndex(content => content.id === id);
-    const removedVideoGame = this.videoGames.splice(index, 1);
-    return of(removedVideoGame[0]);
+  removeVideoGame(id: number): Observable<void> {
+    const url = `${this.serverUrl}/${id}`;
+    return this.http.delete<void>(url);
   }
 
 }

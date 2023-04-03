@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { IContent } from '../models/icontent';
 import { VideoGamesService } from '../services/video-games.service';  
 
@@ -10,21 +11,17 @@ import { VideoGamesService } from '../services/video-games.service';
   styleUrls: ['./content-detail.component.scss']
 })
 export class ContentDetailComponent {
-  contentItem?: IContent;
+  contentItem?: Observable<IContent>;
 
   constructor(private videoGamesService: VideoGamesService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const contentID = +params['id'];
-      this.videoGamesService.getVideoGameById(contentID).subscribe(contentItem => {
-        this.contentItem = contentItem;
-        console.log(this.contentItem);
-        console.log(this.contentItem.id);
-      });
+      this.contentItem = this.videoGamesService.getVideoGameById(contentID);
     });
-  }
   
-
+  
+  }
 
 }

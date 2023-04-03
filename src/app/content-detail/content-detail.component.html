@@ -1,14 +1,17 @@
 
-<div class="card">
-<h2>{{ contentItem?.title }}</h2>
-<p>Author: {{ contentItem?.author }}</p>
-<p>Description: {{ contentItem?.description }}</p>
-<img [src]="contentItem?.imgSrc">
-<ul>
-    <li *ngFor="let tag of contentItem?.tags">{{ tag }}</li>
-  </ul>
-<a [routerLink]="['/']">Back to Content List</a>
-<a *ngIf="contentItem?.id !== 0" [routerLink]="['/content', contentItem!.id - 1]">Previous Content</a>
-</div>
+<ng-container *ngIf="contentItem | async as contentItemData">
+  <div class="card">
+    <h2>{{ contentItemData.title }}</h2>
+    <p>Author: {{ contentItemData.author }}</p>
+    <p>Description: {{ contentItemData.description }}</p>
+    <img [src]="contentItemData.imgSrc">
+    <ul>
+      <li *ngFor="let tag of contentItemData.tags">{{ tag }}</li>
+    </ul>
+    <a [routerLink]="['/']">Back to Content List</a>
+    <a *ngIf="contentItemData.id !== undefined && contentItemData.id !== 0" [routerLink]="['/content', contentItemData.id - 1]">Previous Content</a>
+  </div>
+</ng-container>
+
 
 

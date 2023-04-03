@@ -9,7 +9,7 @@ import { IContent } from './models/icontent';
 export class InMemoryDataServiceService implements InMemoryDbService {
 
   createDb() {
-    return contentList
+    return { content: contentList };
   };
 
 }
