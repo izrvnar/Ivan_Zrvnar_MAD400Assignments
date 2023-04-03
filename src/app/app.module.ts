@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app--routing.module';
 import { SearchContentComponent } from './search-content/search-content.component';
 import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TopNavigationBarComponent } from './top-navigation-bar/top-navigation-bar.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContentDetailComponent,
     SearchContentComponent,
     PageNotFoundComponent,
+    TopNavigationBarComponent
     
   ],
   imports: [
