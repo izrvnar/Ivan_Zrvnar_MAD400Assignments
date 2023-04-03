@@ -14,6 +14,7 @@ import { TopNavigationBarComponent } from './top-navigation-bar/top-navigation-b
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataServiceService } from './in-memory-data-service.service';
+import { ModifyContentComponent } from './modify-content/modify-content.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { InMemoryDataServiceService } from './in-memory-data-service.service';
     ContentDetailComponent,
     SearchContentComponent,
     PageNotFoundComponent,
-    TopNavigationBarComponent,    
+    TopNavigationBarComponent,
+    ModifyContentComponent,    
   ],
   imports: [
     BrowserModule,
