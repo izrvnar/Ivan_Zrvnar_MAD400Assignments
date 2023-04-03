@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IContent } from '../models/icontent';
 import { VideoGamesService } from '../services/video-games.service';
 
@@ -8,7 +9,7 @@ import { VideoGamesService } from '../services/video-games.service';
   templateUrl: './modify-content.component.html',
   styleUrls: ['./modify-content.component.scss']
 })
-export class ModifyContentComponent {
+export class ModifyContentComponent implements OnInit {
   newContent: IContent = {
     id: 0,
     title: '',
@@ -18,21 +19,44 @@ export class ModifyContentComponent {
     imgSrc: '',
     tags: []
   };
+  editMode = false;
   tags = '';
   contentAdded = false;
   contentAddedMessage = 'Content successfully added!';
+  contentId: number | null = null;
 
-  constructor(private videoGamesService: VideoGamesService) {}
+  constructor(private videoGamesService: VideoGamesService, private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    const idParam = this.route.snapshot.paramMap.get('id');
+    if (idParam) {
+      this.editMode = true;
+      this.contentId = +idParam;
+      this.videoGamesService.getVideoGameById(this.contentId).subscribe((content: IContent) => {
+        this.newContent = content;
+      });
+    }
+  }
 
   onSubmit(form: NgForm) {
     this.newContent.tags = this.tags.split(',').map(tag => tag.trim());
-    this.videoGamesService.addVideoGame(this.newContent).subscribe(addedContent => {
-      this.contentAdded = true;
-      form.reset();
-      this.tags = '';
-      setTimeout(() => {
-        this.contentAdded = false;
-      }, 3000);
-    });
+    if (this.editMode) {
+      this.videoGamesService.updateVideoGame(this.newContent).subscribe(() => {
+        this.router.navigate(['/content', this.newContent.id]);
+      });
+    } else {
+      this.videoGamesService.addVideoGame(this.newContent).subscribe(addedContent => {
+        this.contentAdded = true;
+        form.reset();
+        this.tags = '';
+        setTimeout(() => {
+          this.contentAdded = false;
+        }, 3000);
+      });
+    }
+  }
+
+  get isEditing(): boolean {
+    return this.editMode && this.contentId !== null;
   }
 }

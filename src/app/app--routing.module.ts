@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/content', pathMatch: 'full' },
   { path: 'addContent', component: ModifyContentComponent },
   {path: "search", component: SearchContentComponent},
+  { path: 'editContent/:id', component: ModifyContentComponent },
   {path: "**", component: PageNotFoundComponent}
 ]
 
