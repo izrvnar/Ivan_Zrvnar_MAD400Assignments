@@ -10,6 +10,8 @@
     </ul>
     <a [routerLink]="['/']">Back to Content List</a>
     <a *ngIf="contentItemData.id !== undefined && contentItemData.id !== 0" [routerLink]="['/content', contentItemData.id - 1]">Previous Content</a>
+    <a routerLinkActive="active" [routerLink]="['/editContent', contentItemData?.id]">Edit Content</a>
+
   </div>
 </ng-container>
 
