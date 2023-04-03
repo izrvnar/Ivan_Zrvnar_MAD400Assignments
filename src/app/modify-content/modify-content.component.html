@@ -1,13 +1,14 @@
-
 <h2>{{ isEditing ? 'Edit Content' : 'Add New Content' }}</h2>
 
 <form #contentForm="ngForm" (ngSubmit)="onSubmit(contentForm)">
+  <input *ngIf="isEditing" type="number" name="id" [(ngModel)]="newContent.id" [disabled]="true" />
+  
   <label>Title:</label>
   <input type="text" name="title" [(ngModel)]="newContent.title" required /><br />
 
   <label>Author:</label>
   <input type="text" name="author" [(ngModel)]="newContent.author" required /><br />
-
+  
   <label>Type:</label>
   <input type="text" name="type" [(ngModel)]="newContent.type" required /><br />
 
@@ -20,10 +21,9 @@
   <label>Tags:</label>
   <input type="text" name="tags" [(ngModel)]="tags" placeholder="tag1,tag2,tag3" required /><br />
 
-  <input *ngIf="isEditing" type="number" name="id" [(ngModel)]="contentId" [disabled]="true" /><br />
-
-  <button type="submit" [disabled]="contentForm.invalid">{{ isEditing ? 'Update' : 'Add' }} Content</button>
+  <button type="submit" [disabled]="contentForm.invalid">{{ isEditing ? 'Update Content' : 'Add Content' }}</button>
 </form>
 
 <p *ngIf="contentAdded">{{ contentAddedMessage }}</p>
+<p *ngIf="isEditing && contentUpdated">Content successfully updated!</p>
 

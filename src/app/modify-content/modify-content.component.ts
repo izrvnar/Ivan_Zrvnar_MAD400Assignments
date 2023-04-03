@@ -23,6 +23,8 @@ export class ModifyContentComponent implements OnInit {
   tags = '';
   contentAdded = false;
   contentAddedMessage = 'Content successfully added!';
+  contentUpdated = false;
+  contentUpdatedMessage = 'Content successfully updated!';
   contentId: number | null = null;
 
   constructor(private videoGamesService: VideoGamesService, private route: ActivatedRoute, private router: Router) {}
@@ -42,7 +44,10 @@ export class ModifyContentComponent implements OnInit {
     this.newContent.tags = this.tags.split(',').map(tag => tag.trim());
     if (this.editMode) {
       this.videoGamesService.updateVideoGame(this.newContent).subscribe(() => {
-        this.router.navigate(['/content', this.newContent.id]);
+        this.contentUpdated = true;
+        setTimeout(() => {
+          this.contentUpdated = false;
+        }, 3000);
       });
     } else {
       this.videoGamesService.addVideoGame(this.newContent).subscribe(addedContent => {
