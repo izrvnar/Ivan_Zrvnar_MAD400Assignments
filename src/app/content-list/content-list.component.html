@@ -1,27 +1,34 @@
 <div>
-    <h2>Content with no type set</h2>
-    <ul>
-      <li *ngFor="let content of contentList | filterIContent">
-        <app-content-list-item [content]="content"></app-content-list-item>
-      </li>
-    </ul>
-  </div>
-  
-  <div>
-    <h2>Content with type RPG</h2>
-    <ul>
-      <li *ngFor="let content of contentList | filterIContent:'RPG'">
-        <app-content-list-item [content]="content"></app-content-list-item>
-      </li>
-    </ul>
-  </div>
-  
-  <div>
-    <h2>Content with type MMORPG</h2>
-    <ul>
-      <li *ngFor="let content of contentList | filterIContent:'MMORPG'">
-        <app-content-list-item [content]="content"></app-content-list-item>
-      </li>
-    </ul>
-  </div>
+  <h2>Content with no type set</h2>
+  <ul>
+    <li *ngFor="let content of contentList | filterIContent" [ngClass]="{
+      'type-none': !content.type
+    }">
+      <app-content-list-item [content]="content"></app-content-list-item>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Content with type RPG</h2>
+  <ul>
+    <li *ngFor="let content of contentList | filterIContent:'RPG'" [ngClass]="{
+      'type-rpg': content.type === 'RPG'
+    }">
+      <app-content-list-item [content]="content"></app-content-list-item>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Content with type MMORPG</h2>
+  <ul>
+    <li *ngFor="let content of contentList | filterIContent:'MMORPG'" [ngClass]="{
+      'type-mmorpg': content.type === 'MMORPG'
+    }">
+      <app-content-list-item [content]="content"></app-content-list-item>
+    </li>
+  </ul>
+</div>
+
   
