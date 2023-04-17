@@ -34,7 +34,36 @@ export const contentList: IContent[] = [
     description: "The Witcher 3: Wild Hunt is a 2015 action role-playing video game developed and published by CD Projekt. Based on The Witcher series of fantasy novels by Polish author Andrzej Sapkowski, it is the sequel to the 2011 game The Witcher 2: Assassins of Kings, played in an open world with a third-person perspective. The game was released for Microsoft Windows, PlayStation 4, and Xbox One in May 2015, and for Nintendo Switch in October 2019. The game takes place in a medieval fantasy world and follows the story of Geralt of Rivia, a monster hunter known as a witcher. Geralt is looking for his missing adopted daughter on the run from the Wild Hunt, an otherworldly force determined to capture her and use her powers. The game is played from a third-person perspective and its world is navigated on foot or by riding horses, boats, or the in-game equivalent of cars. Players battle the game's many foes with weapons and magic, and can strengthen Geralt by developing his combat skills and earning new equipment. The game's story is non-linear, and players can choose to complete quests in any order. The game's open world design allows players to roam freely and explore the game's many locations, which include cities, towns, fortresses, and caves. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players to freely explore the game's many locations. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players to freely explore the game's many locations. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players to freely explore the game's many locations. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players",
     author: "CD Projekt",
     imgSrc: "https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg",
-    type: "RPG",
+    type: "",
     tags: ["open world", "action-adventure", "fantasy"]
+  },
+
+  {
+    id: 5,
+    title: "The Elder Scrolls IV: Oblivion",
+    description: "The Elder Scrolls IV: Oblivion is an action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fourth installment in The Elder Scrolls action role-playing video game series, following The Elder Scrolls III: Morrowind. Oblivion was released for Microsoft Windows and Xbox 360 in March 2006, and for PlayStation 3 in June 2006. The game takes place in the fictional province of Cyrodiil, 200 years after the events of Morrowind. The player assumes the role of the Last Dragonborn, a prophesied hero who is tasked with saving the world from destruction. Oblivion is an open world game, allowing the player to travel anywhere in the game world at any time. The game's main story revolves around the player character and their quest to defeat the villainous antagonist, Mehrunes Dagon. The game is played from a first-person or third-person perspective, and its world is navigated on foot or by riding horses, boats, or the in-game equivalent of cars. Players battle the game's many foes with weapons and magic, and can strengthen their character by developing their combat skills and earning new equipment. The game's story is non-linear, and players can choose to complete quests in any order. The game's open world design allows players to roam freely and explore the game's many locations, which include cities, towns, fortresses, and caves. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players to freely explore the game's many locations. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players to freely explore the game's many locations. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information or perform tasks. The game's main story is divided into three acts, and the game's open world design allows players to freely explore the game's many locations. The game's main story is complemented by a variety of side quests, and players can interact with non-player characters to obtain information",
+    author: "Bethesda Game Studios",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/5/5d/The_Elder_Scrolls_IV_Oblivion_cover_art.jpg",
+    type: "RPG",
+    tags: ["open world", "action-adventure", "fantasy", "Moddable"]
+  },
+  {
+    id: 6,
+    title: "Final Fantasy VII",
+    description: "Final Fantasy VII is a role-playing video game developed and published by Square Enix. It is the seventh main installment in the Final Fantasy series, and was released in 1997 for the PlayStation console. The game follows Cloud Strife, a mercenary hired by an eco-terrorist organization to help them stop a megacorporation from draining the planet's life force. The game features a turn-based battle system and allows players to customize their characters' abilities and equipment. The story deals with themes of environmentalism and corporate greed, and has been widely praised for its characters, plot, and music.",
+    author: "Square Enix",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/c/c2/Final_Fantasy_VII_Box_Art.jpg",
+    type: "",
+    tags: ["turn-based", "playstation", "sci-fi", "fantasy"]
+  },
+  {
+    id: 7,
+    title: "Grand Theft Auto V",
+    description: "Grand Theft Auto V is an action-adventure game developed by Rockstar North and published by Rockstar Games. It was released in 2013 for PlayStation 3 and Xbox 360, and later for PlayStation 4, Xbox One, and Microsoft Windows. The game is set in the fictional state of San Andreas, and follows three criminals as they attempt to pull off a series of heists. The game features an open-world environment that can be freely explored, and allows players to switch between the three main characters at will. The game also includes a multiplayer mode, Grand Theft Auto Online, that allows players to create their own characters and participate in various activities. The game has been praised for its storytelling, open-world design, and attention to detail.",
+    author: "Rockstar Games",
+    imgSrc: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
+    type: "Action",
+    tags: ["open world", "crime", "multiplayer", "sandbox"]
   }
+  
 ]
