@@ -1,1 +1,27 @@
-<app-content-list-item *ngFor="let content of contentList; let i = index" [content]="content" [ngClass]="i % 2 === 0 ? evenBackgroundClass : oddBackgroundClass"></app-content-list-item>
+<div>
+    <h2>Content with no type set</h2>
+    <ul>
+      <li *ngFor="let content of contentList | filterIContent">
+        <app-content-list-item [content]="content"></app-content-list-item>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h2>Content with type RPG</h2>
+    <ul>
+      <li *ngFor="let content of contentList | filterIContent:'RPG'">
+        <app-content-list-item [content]="content"></app-content-list-item>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h2>Content with type MMORPG</h2>
+    <ul>
+      <li *ngFor="let content of contentList | filterIContent:'MMORPG'">
+        <app-content-list-item [content]="content"></app-content-list-item>
+      </li>
+    </ul>
+  </div>
+  
