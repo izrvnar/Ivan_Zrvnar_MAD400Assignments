@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataServiceService } from './in-memory-data-service.service';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
+import { FilterIContentPipe } from './filter-icontent.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     SearchContentComponent,
     PageNotFoundComponent,
     TopNavigationBarComponent,
-    ModifyContentComponent,    
+    ModifyContentComponent,
+    FilterIContentPipe,    
   ],
   imports: [
     BrowserModule,
